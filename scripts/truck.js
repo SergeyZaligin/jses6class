@@ -18,6 +18,16 @@ class Truck {
         console.log('Delivering order for ' + customerId);
         this.db.remove(customerId);
     }
+
+    printOrders(){
+        var customerIdArray = Object.keys(this.db.getAll());
+
+        console.log('Truck #' + this.truckId + ' has pending orders:');
+        
+        customerIdArray.forEach((id) => {
+            console.log(this.db.get(id));
+        });
+    }
 }
 
 App.Truck = Truck;
