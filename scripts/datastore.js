@@ -22,8 +22,9 @@ class DataStore {
     }
 
     remove(key){
-        delete this.data[key];
+        delete this.data;
     }
+    
 }
 
 App.DataStore = DataStore;
