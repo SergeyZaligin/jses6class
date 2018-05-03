@@ -19,9 +19,10 @@ class FormHandler {
 
     addSubmitHandler(){
         console.log('Setting submit handler for form');
-        this.$formElement.on('submit',  (event) => {
+        this.$formElement.on('submit', function (event)  {
             event.preventDefault();
             const data = $(this).serializeArray();
+            console.log('submit');
             console.log(data);
         });
     }
