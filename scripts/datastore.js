@@ -9,19 +9,19 @@ class DataStore {
         this.data = {};
     }
 
-    add (key, val) {
+    add(key, val){
         this.data[key] = val;
     }
 
-    get (key) {
+    get(key){
         return this.data[key];
     }
 
-    getAll () {
+    getAll(){
         return this.data;
     }
 
-    remove (key) {
+    remove(key){
         delete this.data[key];
     }
 }

@@ -1,14 +1,22 @@
 ((global) => {
 'use strict';
 
-const Truck = global.Truck || {};
+const App = global.App || {};
 
 class Truck {
-    constructor(){
+    constructor(truckId, db){
+        this.truckId = truckId;
+        this.db = db;
+    }
 
+    createOrder(order){
+        console.log('Adding order for ' + order.emailAddress);
+        this.db.add(order.emailAddress, order);
     }
 }
 
-global.Truck = Truck;
+App.Truck = Truck;
+
+global.App = App;
 
 })(window)
