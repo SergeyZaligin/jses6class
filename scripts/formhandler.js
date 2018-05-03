@@ -2,7 +2,7 @@
 'use strict';
 
 const App = global.App || {};
-const $ = window.jQuery;
+const $ = global.jQuery;
 
 class FormHandler {
     constructor(selector){
@@ -19,9 +19,9 @@ class FormHandler {
 
     addSubmitHandler(){
         console.log('Setting submit handler for form');
-        this.$formElement.on('submit', function (event) {
+        this.$formElement.on('submit',  (event) => {
             event.preventDefault();
-            var data = $(this).serializeArray();
+            const data = $(this).serializeArray();
             console.log(data);
         });
     }
